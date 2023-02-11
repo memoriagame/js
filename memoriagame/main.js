@@ -306,13 +306,13 @@ try {
   
  const imgLocal =  `https://memoriagame.github.io/assets/theme/character/pokemon/` + personagens + ".png"
 try {
-  console.log(imgLocal);
+  console.log('imgLocal:', imgLocal);
   // Expected output: "https://mozilla.org/?x=шеллы"
 } catch (e) { // Catches a malformed URI
   console.error(e);
 }
   
-  front.src = imgLocal;
+  front.src = `https://memoriagame.github.io/assets/theme/character/pokemon/` + personagens + ".png";
   
   /*
    * ./css/image/${personagens}.png 
