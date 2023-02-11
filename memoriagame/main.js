@@ -173,6 +173,10 @@ const selectTypeCardNow = (selectObject) => {
   if (selectObject.value === '9') {
       return imageArray[5]; 
   } 
+  // jogar memoriagame com card frontal pokemon
+  if (selectObject.value === '10') {
+      return imageArray[6]; 
+  } 
 }
 
 const createCarta = (personagens, selectTypeCard) => {
