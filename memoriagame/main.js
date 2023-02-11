@@ -1,7 +1,38 @@
 const tabuleiro = document.querySelector('.tabuleiro');
+
+try {
+  console.log(tabuleiro);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
 const personagens = ['kadabra', 'mimikyu', 'slowbro', 'espeon', 'murkrow', 'togepi', 'wobbuffet', 'gloom', 'nickit', 'croagunk', 'glastly', 'drowzee', 'drifloon', 'ralts', 'spinda', 'psyduck'];
+
+try {
+  console.log(personagens);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
 const array_list = (array) => { return array[Math.floor(Math.random() * array.length)]; }
+
+try {
+  console.log(array_list(personagens));
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
 const generateURL = (arrayList, url, url_extension) => { return arrayList.map(filename => [ url + filename + url_extension ] ) }
+
+try {
+  console.log(generateURL(personagens, 'https://memoriagame.github.io/assets/theme/character/pokemon/', '.png'));
+  // Expected output: "https://memoriagame.github.io/assets/theme/character/pokemon/slowbro.png"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
 
 /*
  * aleatoriedade, randomização via api em
@@ -12,7 +43,23 @@ const generateURL = (arrayList, url, url_extension) => { return arrayList.map(fi
  */
 
 const characterPokemonFilename = generateURL(personagens, `https://memoriagame.github.io/assets/theme/character/pokemon/`, ".png")
+
+try {
+  console.log(characterPokemonFilename);
+  // Expected output: "https://memoriagame.github.io/assets/theme/character/pokemon/slowbro.png"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
 const pokemonRandom = array_list(characterPokemonFilename, characterPokemonFilename);
+
+try {
+  console.log(pokemonRandom);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
 
 /*
  * aleatoriedade, randomização via api de países em 
@@ -22,8 +69,33 @@ const pokemonRandom = array_list(characterPokemonFilename, characterPokemonFilen
  */
 
 const listCountry = ['br', 'cn', 'us', 'ru', 'ng', 'in', 'gb', 'id'];
+
+try {
+  console.log(listCountry);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
+
 const filenameCountry = generateURL(listCountry, `https://hatscripts.github.io/circle-flags/flags/`, ".svg")
+
+try {
+  console.log(filenameCountry);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
+
 const countryRandom = array_list(filenameCountry, filenameCountry);
+
+try {
+  console.log(countryRandom);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
 
 const pontuar = `<div class="rating-stars">
          <!--- <div> or <div class="rating-stars"> --->
@@ -36,10 +108,24 @@ const pontuar = `<div class="rating-stars">
          <span class="rating-counter" id="pointValue"></span>
       </div>`;
 
+try {
+  console.log(pontuar);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
 const cronometro = `<p><span id="horas">00</span>:<span id="minutos">00</span>:<span id="segundos">00</span>:<span id="milissegundos">00</p>
 <button id="iniciar">Iniciar</button>
 <button id="pausar">Pausar</button>
 <button id="resetar">Resetar</button>`
+
+try {
+  console.log(cronometro);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
 
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
@@ -47,8 +133,32 @@ const createElement = (tag, className) => {
   return element;
 }
 
+try {
+  console.log(createElement('img', 'test'));
+  // Expected output: "<img className="test"/>"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
+
 let primeiraCarta = '';
+
+try {
+  console.log(primeiraCarta);
+  // Expected output: ""
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
+
 let segundaCarta = '';
+
+try {
+  console.log(segundaCarta);
+  // Expected output: ""
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
 
 const fimDeJogo = () => {
   const cartaInativa = document.querySelectorAll('.carta-inativa');
@@ -61,6 +171,7 @@ const fimDeJogo = () => {
 const playAgain = () => {
   document.getElementById('btnRestart').style.display = 'flex';
 }
+
 
 const restart = () => {
   document.location.reload(true);
@@ -113,14 +224,21 @@ const imageArray = [
     "https://avatars.githubusercontent.com/u/124619609?s=200&v=4"
 ];
 
+
+try {
+  console.log(imageArray);
+  // Expected output: ""
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+
 const randomNum = Math.floor(Math.random() * imageArray.length);
 
-// mudar o background_color do front/back
-const mudar_background_color = (nameClass, colorValue) => {
-    elements = document.getElementsByClassName(nameClass);
-    for (var i = 0; i <elements.length; i++) {
-        elements[i].style.backgroundColor=colorValue;
-    }
+try {
+  console.log(randomNum);
+  // Expected output: ""
+} catch (e) { // Catches a malformed URI
+  console.error(e);
 }
 
 // modos de jogar memoriagame
