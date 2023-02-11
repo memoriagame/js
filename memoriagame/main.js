@@ -1,6 +1,20 @@
 const tabuleiro = document.querySelector('.tabuleiro');
 const personagens = ['kadabra', 'mimikyu', 'slowbro', 'espeon', 'murkrow', 'togepi', 'wobbuffet', 'gloom', 'nickit', 'croagunk', 'glastly', 'drowzee', 'drifloon', 'ralts', 'spinda', 'psyduck'];
 
+/*
+ * GET: https://memoriagame.github.io/assets/theme/character/pokemon/kadabra.png
+ * GET: https://memoriagame.github.io/assets/theme/character/pokemon/{random-filename}+".png" 
+ */
+
+const characterPokemon = ['kadabra', 'mimikyu', 'slowbro', 'espeon', 'murkrow', 'togepi', 'wobbuffet', 'gloom', 'nickit', 'croagunk', 'glastly', 'drowzee', 'drifloon', 'ralts', 'spinda', 'psyduck'];
+
+/* 
+ * const randomNum1 = Math.floor(Math.random() * characterPokemon.length); 
+ * const randomNum2 = get_random(characterPokemon);  
+ */
+
+const getCharacterPokemon = `https://memoriagame.github.io/assets/theme/character/pokemon/${get_random(characterPokemon+".png")}`
+
 // api css variable para manipulação de strings
 const getCSSVar = (name, element = document.documentElement) => {
     return window.getComputedStyle(element).getPropertyValue(`--${name}`);
