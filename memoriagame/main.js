@@ -1,24 +1,27 @@
 const tabuleiro = document.querySelector('.tabuleiro');
 const personagens = ['kadabra', 'mimikyu', 'slowbro', 'espeon', 'murkrow', 'togepi', 'wobbuffet', 'gloom', 'nickit', 'croagunk', 'glastly', 'drowzee', 'drifloon', 'ralts', 'spinda', 'psyduck'];
 const array_list = (array) => { return array[Math.floor(Math.random() * array.length)]; }
+const generateURL = (arrayList, url, url_extension) => { return arrayList.map(filename => url+filename+url_extension) }
 
 /*
  * aleatoriedade, randomização via api em
  * GET: https://memoriagame.github.io/assets/theme/character/pokemon/{filename}+".png" 
+ * api const characterPokemonFilename = personagens.map(filename => `https://memoriagame.github.io/assets/theme/character/pokemon/`+filename+'.png')
  * api const pokemonRandom = characterPokemonFilename[Math.floor(Math.random() * characterPokemonFilename.length)];
  */
 
-const characterPokemonFilename = personagens.map(filename => `https://memoriagame.github.io/assets/theme/character/pokemon/`+filename+'.png')
+const characterPokemonFilename = generateURL(personagens, "https://memoriagame.github.io/assets/theme/character/pokemon/", ".png")
 const pokemonRandom = array_list(characterPokemonFilename, characterPokemonFilename);
 
 /*
  * aleatoriedade, randomização via api de países em 
  * GET: `https://hatscripts.github.io/circle-flags/flags/${flagName}.svg`
- * const countryRandom = filenameCountry[Math.floor(Math.random() * filenameCountry.length)];
+ * api const filenameCountry = listCountry.map(filename => `https://hatscripts.github.io/circle-flags/flags/`+filename+'.svg')
+ * api const countryRandom = filenameCountry[Math.floor(Math.random() * filenameCountry.length)];
  */
 
 const listCountry = ['br', 'cn', 'us', 'ru', 'ng', 'in', 'gb', 'id'];
-const filenameCountry = listCountry.map(filename => `https://hatscripts.github.io/circle-flags/flags/`+filename+'.svg')
+const filenameCountry = generateURL(listCountry, "https://hatscripts.github.io/circle-flags/flags/", ".svg")
 const countryRandom = array_list(filenameCountry, filenameCountry);
 
 const pontuar = `<div class="rating-stars">
