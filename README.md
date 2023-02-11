@@ -1,2 +1,2 @@
 # js
-arquivos principais e outros arquivos
+Arquivos principais e outros arquivos
