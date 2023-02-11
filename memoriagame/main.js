@@ -295,10 +295,11 @@ const createCarta = (personagens, selectTypeCard) => {
   const carta = createElement('div', 'carta');  
   const front = createElement('img', 'face front');
   const back = createElement('img', 'face back');
-  front.src = `https://memoriagame.github.io/assets/theme/character/pokemon/${personagens}+".png"`
+  console.log(personagens);
+  front.src = `https://memoriagame.github.io/assets/theme/character/pokemon/` + personagens + ".png"
   
   /*
-   * `./css/image/${personagens}.png`; 
+   * ./css/image/${personagens}.png 
   */
   
   carta.appendChild(front); 
