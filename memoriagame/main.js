@@ -170,11 +170,17 @@ const selectTypeCardNow = (selectObject) => {
   } 
 }
 
+
 const createCarta = (personagens, selectTypeCard) => {
   const carta = createElement('div', 'carta');  
   const front = createElement('img', 'face front');
   const back = createElement('img', 'face back');
-  front.src = `./css/image/${personagens}.png`; 
+  front.src = `https://memoriagame.github.io/assets/theme/character/pokemon/${personagens}+".png"`
+  
+  /*
+   * `./css/image/${personagens}.png`; 
+  */
+  
   carta.appendChild(front); 
   back.src = selectTypeCardNow(selectTypeCard); 
   //reset_if_image_is_null('back')
