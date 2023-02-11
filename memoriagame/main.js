@@ -1,22 +1,25 @@
 const tabuleiro = document.querySelector('.tabuleiro');
 const personagens = ['kadabra', 'mimikyu', 'slowbro', 'espeon', 'murkrow', 'togepi', 'wobbuffet', 'gloom', 'nickit', 'croagunk', 'glastly', 'drowzee', 'drifloon', 'ralts', 'spinda', 'psyduck'];
+const array_list = (array) => { return array[Math.floor(Math.random() * array.length)]; }
 
 /*
  * aleatoriedade, randomização via api em
  * GET: https://memoriagame.github.io/assets/theme/character/pokemon/{filename}+".png" 
+ * api const pokemonRandom = characterPokemonFilename[Math.floor(Math.random() * characterPokemonFilename.length)];
  */
 
 const characterPokemonFilename = personagens.map(filename => `https://memoriagame.github.io/assets/theme/character/pokemon/`+filename+'.png')
-const pokemonRandom = characterPokemonFilename[Math.floor(Math.random() * characterPokemonFilename.length)];
+const pokemonRandom = array_list(characterPokemonFilename, characterPokemonFilename);
 
 /*
  * aleatoriedade, randomização via api de países em 
  * GET: `https://hatscripts.github.io/circle-flags/flags/${flagName}.svg`
+ * const countryRandom = filenameCountry[Math.floor(Math.random() * filenameCountry.length)];
  */
 
 const listCountry = ['br', 'cn', 'us', 'ru', 'ng', 'in', 'gb', 'id'];
 const filenameCountry = listCountry.map(filename => `https://hatscripts.github.io/circle-flags/flags/`+filename+'.svg')
-const countryRandom = filenameCountry[Math.floor(Math.random() * filenameCountry.length)];
+const countryRandom = array_list(filenameCountry, filenameCountry);
 
 const pontuar = `<div class="rating-stars">
          <!--- <div> or <div class="rating-stars"> --->
