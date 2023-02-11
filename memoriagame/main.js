@@ -295,8 +295,23 @@ const createCarta = (personagens, selectTypeCard) => {
   const carta = createElement('div', 'carta');  
   const front = createElement('img', 'face front');
   const back = createElement('img', 'face back');
+  
+try {
   console.log(personagens);
-  front.src = `https://memoriagame.github.io/assets/theme/character/pokemon/` + personagens + ".png"
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+  
+ const imgLocal =  `https://memoriagame.github.io/assets/theme/character/pokemon/` + personagens + ".png"
+try {
+  console.log(imgLocal);
+  // Expected output: "https://mozilla.org/?x=шеллы"
+} catch (e) { // Catches a malformed URI
+  console.error(e);
+}
+  
+  front.src = imgLocal;
   
   /*
    * ./css/image/${personagens}.png 
